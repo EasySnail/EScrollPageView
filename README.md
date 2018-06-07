@@ -1,4 +1,6 @@
 ![image](https://github.com/longitachi/ZLPhotoBrowser/blob/master/效果图/ZLPhotoBrowser.png)
+![image](https://github.com/EasySnail/EScrollPageView/blob/master/EScrollPageView/EScrollPageView/Test/testBg.png)
+
 
 [![Version](https://img.shields.io/cocoapods/v/ZLPhotoBrowser.svg?style=flat)](http://cocoadocs.org/docsets/ZLPhotoBrowser)
 [![License](https://img.shields.io/cocoapods/l/ZLPhotoBrowser.svg?style=flat)](http://cocoadocs.org/docsets/ZLPhotoBrowser)
@@ -256,7 +258,7 @@ Privacy - Microphone Usage Description
 
 - 预览快速多选效果图
 
-![image](https://github.com/longitachi/ZLPhotoBrowser/blob/master/效果图/预览图快速选择.gif)
+![image](https://github.com/EasySnail/EScrollPageView/blob/master/EScrollPageView/EScrollPageView/Test/testBg.png)
 ![image](https://github.com/longitachi/ZLPhotoBrowser/blob/master/效果图/预览大图快速选择.gif)
 
 - 直接进入相册选择相片效果图
