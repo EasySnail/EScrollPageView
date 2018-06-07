@@ -7,7 +7,7 @@
 //
 
 #import "ENestScrollPageView.h"
-#import "EScrollPageView.h"
+
 
 @interface ENestScrollPageView()<UIScrollViewDelegate>
 @property(nonatomic,retain)EScrollPageView *pageView;
@@ -20,6 +20,7 @@
 @property(nonatomic,assign)BOOL scrollTag;
 @property(nonatomic,assign)CGFloat lastDy;
 @property(nonatomic,assign)BOOL nextReturn;
+@property(nonatomic,assign)CGFloat stayHeight;
 
 @end
 
@@ -37,6 +38,8 @@
         if (self.param == nil) {
             self.param = [ENestParam defaultParam];
         }
+        
+        self.stayHeight = _headView.frame.size.height - fabs(_param.yOffset);
         [self pageView];
     }
     return self;
@@ -53,13 +56,17 @@
     return self;
 }
 
+- (UIScrollView *)eScrollView{
+    return _scrollView;
+}
+
 
 - (ESMGRScrollView *)scrollView{
     if (_scrollView == nil) {
         _scrollView = [[ESMGRScrollView alloc] initWithFrame:self.bounds];
         _scrollView.showsVerticalScrollIndicator = false;
         _scrollView.delegate = self;
-        _scrollView.contentSize = CGSizeMake(0, self.frame.size.height + _headView.frame.size.height);
+        _scrollView.contentSize = CGSizeMake(0, self.frame.size.height + _stayHeight);
         _scrollView.viewArray = self.scrollArray;
         [self addSubview:_scrollView];
     }
@@ -74,8 +81,8 @@
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView{
     BOOL show = false;
     CGFloat dh = scrollView.contentOffset.y;
-    if (dh >= self.headView.frame.size.height) {
-        scrollView.contentOffset = CGPointMake(0, self.headView.frame.size.height);
+    if (dh >= _stayHeight) {
+        scrollView.contentOffset = CGPointMake(0, _stayHeight);
         _lastDy = scrollView.contentOffset.y;
         show = true;
     }
@@ -86,12 +93,15 @@
         }
     }
     if (currenSubScrollView == nil) {return;}
-    if (currenSubScrollView.contentOffset.y > 0 && (self.scrollView.contentOffset.y < self.headView.frame.size.height) && !self.scrollTag) {
+    if (currenSubScrollView.contentOffset.y > 0 && (self.scrollView.contentOffset.y < _stayHeight) && !self.scrollTag) {
         scrollView.contentOffset = CGPointMake(0, _lastDy);
         show = true;
     }
     _lastDy = scrollView.contentOffset.y;
     currenSubScrollView.showsVerticalScrollIndicator = show;
+    if (self.didScrollBlock) {
+        self.didScrollBlock(scrollView.contentOffset.y);
+    }
 }
 
 
@@ -120,7 +130,7 @@
             self.scrollTag = false;
         }else{
             //向上
-            if (self.scrollView.contentOffset.y < self.headView.frame.size.height) {
+            if (self.scrollView.contentOffset.y < _stayHeight) {
                 _nextReturn = true;
                 self.scrollTag = true;
                 ((UIScrollView *)object).contentOffset = CGPointMake(0, old);
@@ -146,7 +156,7 @@
         for (EScrollPageItemBaseView *sv in self.dataViews) {
             sv.didAddScrollViewBlock = block;
         }
-        _pageView = [[EScrollPageView alloc] initWithFrame:CGRectMake(0, self.headView.frame.size.height, self.frame.size.width, self.frame.size.height) dataViews:self.dataViews setParam:self.param.scrollParam];
+        _pageView = [[EScrollPageView alloc] initWithFrame:CGRectMake(0, self.headView.frame.size.height, self.frame.size.width, self.frame.size.height-fabs(_param.yOffset)) dataViews:self.dataViews setParam:self.param.scrollParam];
         [self.scrollView addSubview:_pageView];
         [self.scrollView addSubview:_headView];
     }
@@ -167,6 +177,7 @@
     self = [super init];
     if (self) {
         self.scrollParam = [EScrollPageParam defaultParam];
+        self.yOffset = 0;
     }
     return self;
 }

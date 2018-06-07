@@ -45,7 +45,7 @@
 @interface EScrollPageParam : NSObject
 
 + (EScrollPageParam *)defaultParam;
-@property(nonatomic,assign)CGFloat headerHeight;              //头部高度
+@property(nonatomic,assign)CGFloat headerHeight;              //头部分栏高度
 @property(nonatomic,retain)EPageSegmentParam *segmentParam;   //头部设置参数
 
 @end

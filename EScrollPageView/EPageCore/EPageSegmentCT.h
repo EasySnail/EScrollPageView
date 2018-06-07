@@ -11,7 +11,7 @@
 @class EPageSegmentParam;
 typedef NS_ENUM(NSInteger, EPageContentType) {
     EPageContentLeft = 0,                    //从左到右依次排列
-    EPageContentBetween = 1,                  //平均排列一屏
+    EPageContentBetween = 1,                 //平均排列一屏
 };
 
 @interface EPageSegmentCT : UIView
@@ -38,8 +38,8 @@ typedef NS_ENUM(NSInteger, EPageContentType) {
 @property(nonatomic,assign)EPageContentType type;      //排列类型
 @property(nonatomic,assign)CGFloat margin_spacing;     //左右边缘间距
 @property(nonatomic,assign)CGFloat spacing;            //中间间距
-@property(nonatomic,assign)int selectedColor;          //16进制选中的颜色
-@property(nonatomic,assign)int normalColor;            //16进制正常的颜色
+@property(nonatomic,assign)int textSelectedColor;      //16进制选中的颜色
+@property(nonatomic,assign)int textColor;              //16进制正常的颜色
 @property(nonatomic,assign)BOOL showLine;              //显示底部线
 @property(nonatomic,assign)CGFloat lineWidth;          //底部线宽
 @property(nonatomic,retain)UIColor *lineColor;         //底部线颜色

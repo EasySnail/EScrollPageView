@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface Test2VC : UIViewController
+@property(nonatomic,assign)int type;
 
 @end

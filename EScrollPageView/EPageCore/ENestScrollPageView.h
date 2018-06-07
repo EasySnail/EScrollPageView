@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "EPageSegmentCT.h"
+#import "EScrollPageView.h"
 
 @class ENestParam;
 @class EScrollPageItemBaseView;
@@ -16,6 +16,10 @@
 @interface ENestScrollPageView : UIView
 - (instancetype)initWithFrame:(CGRect)frame headView:(UIView *)headView subDataViews:(NSArray<EScrollPageItemBaseView *> *)dataViews;
 - (instancetype)initWithFrame:(CGRect)frame headView:(UIView *)headView subDataViews:(NSArray<EScrollPageItemBaseView *> *)dataViews setParam:(ENestParam *)param;
+
+- (UIScrollView *)eScrollView;                                //返回scrollview
+@property(nonatomic,copy)void(^didScrollBlock)(CGFloat dy);   //滚动回调
+
 @end
 
 
@@ -23,7 +27,10 @@
 
 /**************************  参数  *****************************/
 @interface ENestParam:NSObject
-@property(nonatomic,retain)EScrollPageParam *scrollParam;
+@property(nonatomic,retain)EScrollPageParam *scrollParam;     //分页设置的参数
+@property(nonatomic,assign)CGFloat yOffset;                   //停留位置
+
+
 + (ENestParam *)defaultParam;
 @end
 

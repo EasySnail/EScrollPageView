@@ -7,7 +7,21 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ENestScrollPageView.h"
+
+@class EScrollPageItemBaseView;
 
 @interface Test1VC : UIViewController
 
+@end
+
+
+
+
+
+/***************子类继承***********************/
+
+@interface Test1ItemView:EScrollPageItemBaseView<UITableViewDelegate,UITableViewDataSource>
+
+@property(nonatomic,retain)UITableView *tableView;
 @end

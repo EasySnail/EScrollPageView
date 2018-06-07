@@ -11,3 +11,15 @@
 @interface Test3VC : UIViewController
 
 @end
+
+
+
+
+
+/***************************************/
+
+@interface Test3HeadView : UIView
+
+@property(nonatomic,retain)UIImageView *bgImageView;        //背景图
+
+@end

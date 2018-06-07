@@ -131,15 +131,15 @@
                 if (scale <= 1.0) {
                     CGFloat fontSize = weakSelf.param.selectedfontSize + (weakSelf.param.fontSize - weakSelf.param.selectedfontSize)*scale;
                     cell.textLabel.font = EFont(fontSize);
-                    float sr = (float)((weakSelf.param.selectedColor & 0xFF0000) >> 16);
-                    float sg = (float)((weakSelf.param.selectedColor & 0xFF00) >> 8);
-                    float sb = (float)(weakSelf.param.selectedColor & 0xFF);
-                    float r = (float)((weakSelf.param.normalColor & 0xFF0000) >> 16);
-                    float g = (float)((weakSelf.param.normalColor & 0xFF00) >> 8);
-                    float b = (float)(weakSelf.param.normalColor & 0xFF);
+                    float sr = (float)((weakSelf.param.textSelectedColor & 0xFF0000) >> 16);
+                    float sg = (float)((weakSelf.param.textSelectedColor & 0xFF00) >> 8);
+                    float sb = (float)(weakSelf.param.textSelectedColor & 0xFF);
+                    float r = (float)((weakSelf.param.textColor & 0xFF0000) >> 16);
+                    float g = (float)((weakSelf.param.textColor & 0xFF00) >> 8);
+                    float b = (float)(weakSelf.param.textColor & 0xFF);
                     cell.textLabel.textColor = [UIColor colorWithRed: (sr+(r-sr)*scale)/255.0 green:(sg+(g-sg)*scale)/255.0 blue:(sb+(b-sb)*scale)/255.0 alpha:1];
                 }else{
-                    cell.textLabel.textColor = ERGBColor(weakSelf.param.normalColor);
+                    cell.textLabel.textColor = ERGBColor(weakSelf.param.textColor);
                     cell.textLabel.font = EFont(weakSelf.param.fontSize);
                 }
             }
@@ -150,10 +150,12 @@
     if (_lineView == nil) {
         _lineView = [[UIView alloc] initWithFrame:CGRectMake(_param.margin_spacing+(self.itemWidth+_param.spacing)*_param.startIndex, self.collectionView.frame.size.height-2, self.itemWidth, 2)];
         _lineView.hidden = !_param.showLine;
-        UIView *sline = [[UIView alloc] initWithFrame:CGRectMake((_lineView.frame.size.width-self.param.lineWidth)*0.5, 0, self.param.lineWidth, _lineView.frame.size.height)];
+        CGFloat lineW = self.param.lineWidth < 0 ? self.itemWidth*0.6 : self.param.lineWidth;
+        UIView *sline = [[UIView alloc] initWithFrame:CGRectMake((_lineView.frame.size.width-lineW)*0.5, 0, lineW, _lineView.frame.size.height)];
         [_lineView addSubview:sline];
         sline.backgroundColor = self.param.lineColor;
         [self.collectionView addSubview:_lineView];
+        [self.collectionView selectItemAtIndexPath:[NSIndexPath indexPathForRow:self.param.startIndex inSection:0] animated:true scrollPosition:UICollectionViewScrollPositionCenteredHorizontally];
     }
     return _lineView;
 }
@@ -187,10 +189,10 @@
         self.type = EPageContentBetween;
         self.spacing = 5;
         self.margin_spacing = 5;
-        self.selectedColor = 0xFF0000;
-        self.normalColor = 0x000000;
+        self.textSelectedColor = 0xFF0000;
+        self.textColor = 0x000000;
         self.showLine = true;
-        self.lineWidth = 50;
+        self.lineWidth = -1;
         self.lineColor = [UIColor redColor];
         self.fontSize = 15;
         self.selectedfontSize = 15;
@@ -215,7 +217,7 @@
 }
 
 - (void)didSelected:(BOOL)selected{
-    self.textLabel.textColor = selected ? ERGBColor(_param.selectedColor) : ERGBColor(_param.normalColor);
+    self.textLabel.textColor = selected ? ERGBColor(_param.textSelectedColor) : ERGBColor(_param.textColor);
     self.textLabel.font = selected ? EFont(_param.selectedfontSize) : EFont(_param.fontSize);
 }
 
@@ -223,7 +225,7 @@
     if (_textLabel == nil) {
         _textLabel = [[UILabel alloc] init];
         _textLabel.font = [UIFont systemFontOfSize:self.param.fontSize];
-        _textLabel.textColor = ERGBColor(self.param.normalColor);
+        _textLabel.textColor = ERGBColor(self.param.textColor);
         _textLabel.textAlignment = NSTextAlignmentCenter;
         [self.contentView addSubview:_textLabel];
     }
