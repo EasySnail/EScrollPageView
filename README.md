@@ -8,6 +8,10 @@
 - [x] 单独的分栏滚动 EScrollPageView
 - [x] 分栏 EPageSegmentCT
 
+### pods引用
+```objc
+pod 'EScrollPageView', '~> 0.0.1'
+```
 ### 代码中调用 ENestScrollPageView
 ```objc
 #import "ENestScrollPageView.h"
