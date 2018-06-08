@@ -52,6 +52,7 @@
 }
 - (ENestScrollPageView *)pageView{
     if (_pageView == nil) {
+        //每一项的view子类需要继承EScrollPageItemBaseView实现相关界面
         EScrollPageItemBaseView *v1 = [[Test1ItemView alloc] initWithPageTitle:@"个人"];
         EScrollPageItemBaseView *v2 = [[Test1ItemView alloc] initWithPageTitle:@"国家"];
         EScrollPageItemBaseView *v3 = [[Test1ItemView alloc] initWithPageTitle:@"地球"];
@@ -67,10 +68,11 @@
         param.scrollParam.segmentParam.textColor = 0x000000;
         //分栏高度
         param.scrollParam.headerHeight = 40;
+        //停留位置偏移
         param.yOffset = nvHeight;
-        
         _pageView = [[ENestScrollPageView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height) headView:self.headView subDataViews:vs setParam:param];
         __weak Test3VC *weakSelf = self;
+        //头部滚动
         _pageView.didScrollBlock = ^(CGFloat dy) {
             [weakSelf didScroll:dy];
         };

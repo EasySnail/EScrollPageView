@@ -21,6 +21,10 @@
 		4030669920C9135300A24EA7 /* Test3VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4030669820C9135300A24EA7 /* Test3VC.m */; };
 		4030669B20C928E100A24EA7 /* testBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4030669A20C928E100A24EA7 /* testBg.png */; };
 		408AC0AB20CA162B009010D4 /* Page.gif in Resources */ = {isa = PBXBuildFile; fileRef = 408AC0AA20CA162B009010D4 /* Page.gif */; };
+		408AC0B020CA1B5B009010D4 /* simulator-02.png in Resources */ = {isa = PBXBuildFile; fileRef = 408AC0AC20CA1B5A009010D4 /* simulator-02.png */; };
+		408AC0B120CA1B5B009010D4 /* simulator-11.png in Resources */ = {isa = PBXBuildFile; fileRef = 408AC0AD20CA1B5A009010D4 /* simulator-11.png */; };
+		408AC0B220CA1B5B009010D4 /* simulator-01.png in Resources */ = {isa = PBXBuildFile; fileRef = 408AC0AE20CA1B5B009010D4 /* simulator-01.png */; };
+		408AC0B320CA1B5B009010D4 /* simulator-12.png in Resources */ = {isa = PBXBuildFile; fileRef = 408AC0AF20CA1B5B009010D4 /* simulator-12.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +52,10 @@
 		4030669820C9135300A24EA7 /* Test3VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test3VC.m; sourceTree = "<group>"; };
 		4030669A20C928E100A24EA7 /* testBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testBg.png; sourceTree = "<group>"; };
 		408AC0AA20CA162B009010D4 /* Page.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Page.gif; sourceTree = "<group>"; };
+		408AC0AC20CA1B5A009010D4 /* simulator-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simulator-02.png"; sourceTree = "<group>"; };
+		408AC0AD20CA1B5A009010D4 /* simulator-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simulator-11.png"; sourceTree = "<group>"; };
+		408AC0AE20CA1B5B009010D4 /* simulator-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simulator-01.png"; sourceTree = "<group>"; };
+		408AC0AF20CA1B5B009010D4 /* simulator-12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simulator-12.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +134,10 @@
 		408AC0A920CA162B009010D4 /* 效果图 */ = {
 			isa = PBXGroup;
 			children = (
+				408AC0AE20CA1B5B009010D4 /* simulator-01.png */,
+				408AC0AC20CA1B5A009010D4 /* simulator-02.png */,
+				408AC0AD20CA1B5A009010D4 /* simulator-11.png */,
+				408AC0AF20CA1B5B009010D4 /* simulator-12.png */,
 				408AC0AA20CA162B009010D4 /* Page.gif */,
 			);
 			path = "效果图";
@@ -188,9 +200,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				408AC0B020CA1B5B009010D4 /* simulator-02.png in Resources */,
+				408AC0B220CA1B5B009010D4 /* simulator-01.png in Resources */,
 				4030667720C8DE3500A24EA7 /* LaunchScreen.storyboard in Resources */,
 				4030667420C8DE3500A24EA7 /* Assets.xcassets in Resources */,
 				4030669B20C928E100A24EA7 /* testBg.png in Resources */,
+				408AC0B120CA1B5B009010D4 /* simulator-11.png in Resources */,
+				408AC0B320CA1B5B009010D4 /* simulator-12.png in Resources */,
 				408AC0AB20CA162B009010D4 /* Page.gif in Resources */,
 				4030667220C8DE3300A24EA7 /* Main.storyboard in Resources */,
 			);
