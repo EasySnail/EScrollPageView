@@ -32,10 +32,10 @@
         self.currenIndex = param.segmentParam.startIndex;
         self.dataViews = dataViews;
         NSMutableArray *titles = [NSMutableArray array];
-        for (NSInteger i = 0; i < _dataViews.count; ++i) {
+        for (int i = 0; i < _dataViews.count; ++i) {
             _dataViews[i].index = i;
             NSString *title = _dataViews[i].title;
-            [titles addObject:(title == nil ? [NSString stringWithFormat:@"%ld",i] : title)];
+            [titles addObject:(title == nil ? [NSString stringWithFormat:@"%d",i] : title)];
             _dataViews[i].frame = CGRectMake(i*self.scrollView.frame.size.width, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height);
             [self.scrollView addSubview:_dataViews[i]];
             if (i == param.segmentParam.startIndex) {
