@@ -20,6 +20,7 @@
 		4030669620C8FE4E00A24EA7 /* Test2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4030669520C8FE4E00A24EA7 /* Test2VC.m */; };
 		4030669920C9135300A24EA7 /* Test3VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4030669820C9135300A24EA7 /* Test3VC.m */; };
 		4030669B20C928E100A24EA7 /* testBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4030669A20C928E100A24EA7 /* testBg.png */; };
+		408AC0AB20CA162B009010D4 /* Page.gif in Resources */ = {isa = PBXBuildFile; fileRef = 408AC0AA20CA162B009010D4 /* Page.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		4030669720C9135300A24EA7 /* Test3VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test3VC.h; sourceTree = "<group>"; };
 		4030669820C9135300A24EA7 /* Test3VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test3VC.m; sourceTree = "<group>"; };
 		4030669A20C928E100A24EA7 /* testBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testBg.png; sourceTree = "<group>"; };
+		408AC0AA20CA162B009010D4 /* Page.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Page.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,6 +64,7 @@
 		4030665E20C8DE3300A24EA7 = {
 			isa = PBXGroup;
 			children = (
+				408AC0A920CA162B009010D4 /* 效果图 */,
 				4030668020C8DF8200A24EA7 /* EPageCore */,
 				4030666920C8DE3300A24EA7 /* EScrollPageView */,
 				4030666820C8DE3300A24EA7 /* Products */,
@@ -118,6 +121,14 @@
 				4030669820C9135300A24EA7 /* Test3VC.m */,
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		408AC0A920CA162B009010D4 /* 效果图 */ = {
+			isa = PBXGroup;
+			children = (
+				408AC0AA20CA162B009010D4 /* Page.gif */,
+			);
+			path = "效果图";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +191,7 @@
 				4030667720C8DE3500A24EA7 /* LaunchScreen.storyboard in Resources */,
 				4030667420C8DE3500A24EA7 /* Assets.xcassets in Resources */,
 				4030669B20C928E100A24EA7 /* testBg.png in Resources */,
+				408AC0AB20CA162B009010D4 /* Page.gif in Resources */,
 				4030667220C8DE3300A24EA7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

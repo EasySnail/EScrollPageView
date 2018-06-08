@@ -43,8 +43,6 @@
     if (dy < 0) {rect.size.height -= dy;}
     self.headView.bgImageView.bounds = rect;
     
-    
-    
 
     //更改导航，渐变根据距离计算
     BOOL show = ( dy >= self.headView.bounds.size.height - nvHeight);
