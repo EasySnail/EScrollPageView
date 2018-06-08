@@ -27,18 +27,14 @@
 - (EScrollPageView *)pageView{
     if (_pageView == nil) {
         CGFloat statusBarH = ([UIApplication sharedApplication].statusBarFrame.size.height + 44.0);
-        
+        //每一项的view子类需要继承EScrollPageItemBaseView实现相关界面
         EScrollPageItemBaseView *v1 = [[Test1ItemView alloc] initWithPageTitle:@"个人"];
         EScrollPageItemBaseView *v2 = [[Test1ItemView alloc] initWithPageTitle:@"国家"];
         EScrollPageItemBaseView *v3 = [[Test1ItemView alloc] initWithPageTitle:@"地球"];
         EScrollPageItemBaseView *v4 = [[Test1ItemView alloc] initWithPageTitle:@"宇宙"];
         EScrollPageItemBaseView *v5 = [[Test1ItemView alloc] initWithPageTitle:@"mine"];
         NSArray *vs = @[v1,v2,v3,v4,v5];
-        
-        
-        
         EScrollPageParam *param = [[EScrollPageParam alloc] init];
-        
         if (_type == 1) {
             EScrollPageItemBaseView *v6 = [[EScrollPageItemBaseView alloc] initWithPageTitle:@"小米"];
             v6.backgroundColor = [UIColor yellowColor];
@@ -46,7 +42,6 @@
             v7.backgroundColor = [UIColor redColor];
             EScrollPageItemBaseView *v8 = [[Test1ItemView alloc] initWithPageTitle:@"iPhone"];
             vs = @[v1,v2,v3,v4,v5,v6,v7,v8];
-            
             //头部高度
             param.headerHeight = 50;
             //默认第3个
@@ -64,11 +59,6 @@
             //选中的颜色
             param.segmentParam.textSelectedColor = 0x0afbea;
         }
-        
-        
-        
-        
-        
         _pageView = [[EScrollPageView alloc] initWithFrame:CGRectMake(0, statusBarH, self.view.frame.size.width, [UIScreen mainScreen].bounds.size.height-statusBarH) dataViews:vs setParam:param];
         [self.view addSubview:_pageView];
     }
