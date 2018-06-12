@@ -10,7 +10,7 @@
 
 ### pods引用
 ```objc
-pod 'EScrollPageView', '~> 0.0.1'
+pod 'EScrollPageView', '~> 0.0.2'
 ```
 ### 代码中调用 ENestScrollPageView
 ```objc
