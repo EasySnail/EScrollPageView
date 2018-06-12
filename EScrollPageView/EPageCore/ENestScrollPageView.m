@@ -10,7 +10,7 @@
 
 
 @interface ENestScrollPageView()<UIScrollViewDelegate>
-@property(nonatomic,retain)EScrollPageView *pageView;
+@property(nonatomic,retain,readwrite)EScrollPageView *pageView;
 @property(nonatomic,retain)ESMGRScrollView *scrollView;
 @property(nonatomic,retain)ENestParam *param;
 @property(nonatomic,retain)NSArray<EScrollPageItemBaseView *> *dataViews;

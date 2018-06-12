@@ -14,11 +14,13 @@
 @class EScrollPageParam;
 
 @interface ENestScrollPageView : UIView
+
+@property(nonatomic,retain,readonly)EScrollPageView *pageView;      //分页
+- (UIScrollView *)eScrollView;                                      //返回scrollview
+@property(nonatomic,copy)void(^didScrollBlock)(CGFloat dy);         //滚动回调
+
 - (instancetype)initWithFrame:(CGRect)frame headView:(UIView *)headView subDataViews:(NSArray<EScrollPageItemBaseView *> *)dataViews;
 - (instancetype)initWithFrame:(CGRect)frame headView:(UIView *)headView subDataViews:(NSArray<EScrollPageItemBaseView *> *)dataViews setParam:(ENestParam *)param;
-
-- (UIScrollView *)eScrollView;                                //返回scrollview
-@property(nonatomic,copy)void(^didScrollBlock)(CGFloat dy);   //滚动回调
 
 @end
 
