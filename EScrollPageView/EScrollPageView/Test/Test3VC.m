@@ -9,6 +9,7 @@
 #import "Test3VC.h"
 #import "ENestScrollPageView.h"
 #import "Test1VC.h"
+#import "Test4ItemView.h"
 
 #define nvHeight  ([UIApplication sharedApplication].statusBarFrame.size.height + 44.0)
 
@@ -53,10 +54,10 @@
 - (ENestScrollPageView *)pageView{
     if (_pageView == nil) {
         //每一项的view子类需要继承EScrollPageItemBaseView实现相关界面
-        EScrollPageItemBaseView *v1 = [[Test1ItemView alloc] initWithPageTitle:@"个人"];
+        EScrollPageItemBaseView *v1 = [[Test3ItemView alloc] initWithPageTitle:@"个人"];
         EScrollPageItemBaseView *v2 = [[Test1ItemView alloc] initWithPageTitle:@"国家"];
         EScrollPageItemBaseView *v3 = [[Test1ItemView alloc] initWithPageTitle:@"地球"];
-        EScrollPageItemBaseView *v4 = [[Test1ItemView alloc] initWithPageTitle:@"宇宙"];
+        EScrollPageItemBaseView *v4 = [[Test4ItemView alloc] initWithPageTitle:@"宇宙"];
         EScrollPageItemBaseView *v5 = [[Test1ItemView alloc] initWithPageTitle:@"mine"];
         
         NSArray *vs = @[v1,v2,v3,v4,v5];
@@ -160,5 +161,8 @@
 }
 
 @end
+
+
+
 
 

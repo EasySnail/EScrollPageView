@@ -32,13 +32,13 @@
     if (self) {
         self.headView = headView;
         if (headView == nil) {_headView = [[UIView alloc] init];}
-        _headView.frame = CGRectMake(0, 0, frame.size.width, _headView.frame.size.height);
+        CGFloat headHeight = ceil(_headView.frame.size.height);
+        _headView.frame = CGRectMake(0, 0, frame.size.width, headHeight);
         self.param = param;
         self.dataViews = dataViews;
         if (self.param == nil) {
             self.param = [ENestParam defaultParam];
         }
-        
         self.stayHeight = _headView.frame.size.height - fabs(_param.yOffset);
         [self pageView];
     }

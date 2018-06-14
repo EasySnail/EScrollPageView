@@ -20,6 +20,9 @@
 		4030669620C8FE4E00A24EA7 /* Test2VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4030669520C8FE4E00A24EA7 /* Test2VC.m */; };
 		4030669920C9135300A24EA7 /* Test3VC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4030669820C9135300A24EA7 /* Test3VC.m */; };
 		4030669B20C928E100A24EA7 /* testBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 4030669A20C928E100A24EA7 /* testBg.png */; };
+		40534E1020D2430B00DF8D33 /* EWaterFallView.m in Sources */ = {isa = PBXBuildFile; fileRef = 40534E0E20D2430A00DF8D33 /* EWaterFallView.m */; };
+		406F83CF20D245B8002C37D4 /* Test4ItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 406F83CE20D245B8002C37D4 /* Test4ItemView.m */; };
+		406F83D120D24A23002C37D4 /* test.htm in Resources */ = {isa = PBXBuildFile; fileRef = 406F83D020D24A23002C37D4 /* test.htm */; };
 		408AC0AB20CA162B009010D4 /* Page.gif in Resources */ = {isa = PBXBuildFile; fileRef = 408AC0AA20CA162B009010D4 /* Page.gif */; };
 		408AC0B020CA1B5B009010D4 /* simulator-02.png in Resources */ = {isa = PBXBuildFile; fileRef = 408AC0AC20CA1B5A009010D4 /* simulator-02.png */; };
 		408AC0B120CA1B5B009010D4 /* simulator-11.png in Resources */ = {isa = PBXBuildFile; fileRef = 408AC0AD20CA1B5A009010D4 /* simulator-11.png */; };
@@ -51,6 +54,11 @@
 		4030669720C9135300A24EA7 /* Test3VC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test3VC.h; sourceTree = "<group>"; };
 		4030669820C9135300A24EA7 /* Test3VC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test3VC.m; sourceTree = "<group>"; };
 		4030669A20C928E100A24EA7 /* testBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testBg.png; sourceTree = "<group>"; };
+		40534E0E20D2430A00DF8D33 /* EWaterFallView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EWaterFallView.m; sourceTree = "<group>"; };
+		40534E0F20D2430A00DF8D33 /* EWaterFallView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EWaterFallView.h; sourceTree = "<group>"; };
+		406F83CD20D245B8002C37D4 /* Test4ItemView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test4ItemView.h; sourceTree = "<group>"; };
+		406F83CE20D245B8002C37D4 /* Test4ItemView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test4ItemView.m; sourceTree = "<group>"; };
+		406F83D020D24A23002C37D4 /* test.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = test.htm; sourceTree = "<group>"; };
 		408AC0AA20CA162B009010D4 /* Page.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Page.gif; sourceTree = "<group>"; };
 		408AC0AC20CA1B5A009010D4 /* simulator-02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simulator-02.png"; sourceTree = "<group>"; };
 		408AC0AD20CA1B5A009010D4 /* simulator-11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "simulator-11.png"; sourceTree = "<group>"; };
@@ -72,6 +80,7 @@
 		4030665E20C8DE3300A24EA7 = {
 			isa = PBXGroup;
 			children = (
+				40534E0D20D2430A00DF8D33 /* EWaterFall */,
 				408AC0A920CA162B009010D4 /* 效果图 */,
 				4030668020C8DF8200A24EA7 /* EPageCore */,
 				4030666920C8DE3300A24EA7 /* EScrollPageView */,
@@ -120,6 +129,7 @@
 		4030669020C8E43800A24EA7 /* Test */ = {
 			isa = PBXGroup;
 			children = (
+				406F83D020D24A23002C37D4 /* test.htm */,
 				4030669A20C928E100A24EA7 /* testBg.png */,
 				4030669120C8E71100A24EA7 /* Test1VC.h */,
 				4030669220C8E71100A24EA7 /* Test1VC.m */,
@@ -127,8 +137,19 @@
 				4030669520C8FE4E00A24EA7 /* Test2VC.m */,
 				4030669720C9135300A24EA7 /* Test3VC.h */,
 				4030669820C9135300A24EA7 /* Test3VC.m */,
+				406F83CD20D245B8002C37D4 /* Test4ItemView.h */,
+				406F83CE20D245B8002C37D4 /* Test4ItemView.m */,
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		40534E0D20D2430A00DF8D33 /* EWaterFall */ = {
+			isa = PBXGroup;
+			children = (
+				40534E0E20D2430A00DF8D33 /* EWaterFallView.m */,
+				40534E0F20D2430A00DF8D33 /* EWaterFallView.h */,
+			);
+			path = EWaterFall;
 			sourceTree = "<group>";
 		};
 		408AC0A920CA162B009010D4 /* 效果图 */ = {
@@ -203,6 +224,7 @@
 				408AC0B020CA1B5B009010D4 /* simulator-02.png in Resources */,
 				408AC0B220CA1B5B009010D4 /* simulator-01.png in Resources */,
 				4030667720C8DE3500A24EA7 /* LaunchScreen.storyboard in Resources */,
+				406F83D120D24A23002C37D4 /* test.htm in Resources */,
 				4030667420C8DE3500A24EA7 /* Assets.xcassets in Resources */,
 				4030669B20C928E100A24EA7 /* testBg.png in Resources */,
 				408AC0B120CA1B5B009010D4 /* simulator-11.png in Resources */,
@@ -221,7 +243,9 @@
 			files = (
 				4030666F20C8DE3300A24EA7 /* ViewController.m in Sources */,
 				4030668820C8DFDF00A24EA7 /* EPageSegmentCT.m in Sources */,
+				406F83CF20D245B8002C37D4 /* Test4ItemView.m in Sources */,
 				4030668920C8DFDF00A24EA7 /* EScrollPageView.m in Sources */,
+				40534E1020D2430B00DF8D33 /* EWaterFallView.m in Sources */,
 				4030667A20C8DE3500A24EA7 /* main.m in Sources */,
 				4030669320C8E71100A24EA7 /* Test1VC.m in Sources */,
 				4030668720C8DFDF00A24EA7 /* ENestScrollPageView.m in Sources */,
@@ -368,6 +392,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 249389H2K5;
 				INFOPLIST_FILE = EScrollPageView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -385,6 +410,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 249389H2K5;
 				INFOPLIST_FILE = EScrollPageView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -7,6 +7,7 @@
 //
 
 #import "EScrollPageView.h"
+#import <WebKit/WebKit.h>
 
 
 @interface EScrollPageView()<UIScrollViewDelegate>
@@ -116,6 +117,14 @@
     if ([subview isKindOfClass:[UIScrollView class]]) {
         if (self.didAddScrollViewBlock) {
             self.didAddScrollViewBlock((UIScrollView *)subview,_index);
+        }
+    }else if ([subview isKindOfClass:[WKWebView class]]){
+        if (self.didAddScrollViewBlock) {
+            self.didAddScrollViewBlock(((WKWebView *)subview).scrollView,_index);
+        }
+    }else if ([subview isKindOfClass:[UIWebView class]]){
+        if (self.didAddScrollViewBlock) {
+            self.didAddScrollViewBlock(((UIWebView *)subview).scrollView,_index);
         }
     }else{
         for (UIView *sview in [subview subviews]) {
